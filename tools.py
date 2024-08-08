@@ -17,7 +17,6 @@ def find_vehicle_port():
         try:
             print(f"Trying port: {port}")
             vehicle = mavutil.mavlink_connection(port, baud=115200)
-            #vehicle.wait_heartbeat(timeout=getConfigData("usbTimeout"))
             vehicle.wait_heartbeat(timeout=1)
             print(f"Found vehicle on port: {port}")
             return port
@@ -28,8 +27,7 @@ def find_vehicle_port():
 
 
 def getConfigData(dataKey):
-    #configFilePath = os.path.join(os.getcwd(), "config.json")
-    configFilePath = "/home/dev/Documents/firmwareUploader/config.json"
+    configFilePath = "/home/remoteFileHandler/config.json"
     try:
         with open(configFilePath, 'r') as file:
             config = json.load(file)
