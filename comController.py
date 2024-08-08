@@ -7,8 +7,8 @@ from runUploader import startFirmwareUpload
 
 app = Flask(__name__)
 DOWNLOAD_FOLDER = tools.get_download_folder()
-CONFIG_PATH = os.path.join(Path.home(), "remoteFileHandler/config.json")
-#CONFIG_PATH = "/home/dev/Documents/remoteFileHandler/config.json"
+CONFIG_PATH = "/home/remoteFileHandler/config.json"
+#CONFIG_PATH = "/home/dev/Documents/remoteFileHandler/config.json" /home/remoteFileHandler/config.json
 
 @app.route('/', methods=['GET'])
 def handle_post(): #Listens for pings from the interface and returns the drone name
